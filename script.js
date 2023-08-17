@@ -67,9 +67,9 @@ const calculateNeeds = (doorsNum, rate) => {
 
     // Calculate the total discount for the sidebar
     const calculatedTotalSavings =
-      Number(discount) +
+      (Number(discount) +
       Number(indeptScreeningPrices.savings) +
-      Number(leasePrices.savings);
+      Number(leasePrices.savings)).toFixed(2);
 
     // Input the needs on the first board
     needs.innerHTML = `Enquêtes: ${totalNeeds}<br>Baux: ${totalNeeds}`;
