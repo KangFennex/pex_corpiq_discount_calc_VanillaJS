@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>PEX CORPIQ Savings Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator-and-discounts-display-container">
+        <div class="calculator-container">
+          <div class="board calculator-input">
+            <div class="box lead logo span-three">
+              Vos économies en tant que membre
+              <span class="corpiq-logo"
+                ><img src=".\assets\corpiq logo.png" alt="Logo CORPIQ"
+              /></span>
+            </div>
+            <div class="box category">Forfait PEX</div>
+            <div class="box category">%</div>
+            <div class="box category">Rabais sur PEX</div>
+            <div class="box input-box">
+              <input
+                class="text-area prix-forfait"
+                type="number"
+                placeholder="Prix ($)"
+              />
+            </div>
+            <div class="box percentage-discount">10 %</div>
+            <div class="box">
+              <span class="prix-forfait-rabais"
+                >Rabais: 0.00&nbsp;$<br />Total: 0.00&nbsp;$<br />Avec taxes:
+                0.00&nbsp;$</span
+              >
+            </div>
+            <div class="box category">Nombre de portes</div>
+            <div class="box category">Taux de roulement (%)</div>
+            <div class="box category">Besoins</div>
+            <div class="box">
+              <input
+                class="text-area number-doors"
+                type="number"
+                placeholder="Portes (#)"
+              />
+            </div>
+            <div class="box">
+              <input
+                class="text-area percentage-rental"
+                type="number"
+                placeholder="Taux (%)"
+              />
+            </div>
+            <div class="box besoins-enquetes-baux">
+              Enquêtes: 0 <br />
+              Baux: 0
+            </div>
+          </div>
+        </div>
+        <div class="discounts-display-container">
+          <div class="board discounts-display">
+            <div class="box lead span-four">
+              Vos économies en enquêtes et en baux
+            </div>
+            <div class="box"></div>
+            <div class="box category">Prix régulier</div>
+            <div class="box category">Prix réduit</div>
+            <div class="box category">Rabais</div>
+            <div class="box category">Enquêtes</div>
+            <div class="box screeningsRegPrice">
+              Basique: 0.00 $<br />Approfondie: 0.00 $
+            </div>
+            <div class="box screeningsRedPrice">
+              Basique: 0.00 $<br />Approfondie: 0.00 $
+            </div>
+            <div class="box screeningsDiscount">
+              Basique: 0.00 $<br />Approfondie: 0.00 $
+            </div>
+            <div class="box category">Baux</div>
+            <div class="box leasesRegPrice">0.00 $</div>
+            <div class="box leasesRedPrice">0.00 $</div>
+            <div class="box leasesDiscount">0.00 $</div>
+          </div>
+        </div>
+      </div>
+      <div class="all-discounts-display-container">
+        <div class="board all-discounts-display">
+          <div class="box category sidebarCategory">Rabais adhésion</div>
+          <div class="box prix-forfait-rabais-sidebar">0.00 $</div>
+          <div class="box category sidebarCategory">Rabais enquêtes</div>
+          <div class="box screeningsDiscount-sidebar">0.00 $</div>
+          <div class="box category sidebarCategory">Rabais baux</div>
+          <div class="box leasesDiscountSidebar">0.00 $</div>
+        </div>
+        <div class="board total-discounts-display">
+          <div class="box category sidebarCategory">Économies totales</div>
+          <div class="box totalSavings">WORD</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

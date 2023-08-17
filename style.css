@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Russo+One&display=swap");
+
+:root {
+  --primary-color: #245baa;
+  --secondary-color: #616779;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--secondary-color);
+}
+
+.container {
+  display: flex;
+}
+
+.board {
+  display: grid;
+  width: auto;
+  border: 3px solid var(--primary-color);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.75);
+  font-family: "Russo One", sans-serif;
+}
+
+.board .calculator-input {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px 3px;
+  grid-template-areas:
+    "Logos Logos Logos"
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . .";
+}
+
+.board .discounts-display {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px 3px;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.all-discounts-display-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.board .all-discounts-display {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat (6, 1fr);
+}
+
+.board .total-discounts-display {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat (2, 1fr);
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0.2rem;
+}
+
+.lead {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom: 2px solid var(--primary-color);
+  background: linear-gradient(to right, #a5dbf7, #00aaff);
+  text-align: center;
+}
+
+.lead .logo {
+  grid-area: Logos;
+}
+
+.corpiq-logo {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+}
+
+.corpiq-logo img {
+  width: 70%;
+}
+
+.span-three {
+  grid-column: span 3;
+}
+
+.span-four {
+  grid-column: span 4;
+}
+
+.text-area {
+  background-color: transparent;
+  opacity: 68%;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+}
+
+.percentage-discount {
+  font-size: 1.5rem;
+}
+
+.category {
+  padding: 1rem;
+  color: var(--secondary-color);
+}
+
+.sidebarCategory {
+  background: linear-gradient(to right, #a5dbf7, #00aaff);
+}
