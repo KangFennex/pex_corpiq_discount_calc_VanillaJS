@@ -18,8 +18,14 @@ const leasesRed = document.querySelector(".leasesRedPrice");
 const leasesDis = document.querySelector(".leasesDiscount");
 const leasesDisSidebar = document.querySelector(".leasesDiscountSidebar");
 const totalSavings = document.querySelector(".totalSavings");
+
+const costMembers = document.querySelector(".prix-membre");
+const costNonMembers = document.querySelector(".prix-nonMembre");
+
 let totalNeeds;
 let discount;
+let cost;
+let total;
 
 // textarea.focus();
 
@@ -65,11 +71,34 @@ const calculateNeeds = (doorsNum, rate) => {
     const indeptScreeningPrices = calculatePrices(totalNeeds, 47.99, 74.9);
     const leasePrices = calculatePrices(totalNeeds, 4.97, 8.29);
 
+    // Calculate the cost of (1) membership + (2) screenings + (3) leases for members vs non-members
+
+    // For non-members
+    const totalCostNonMembers = (
+      Number(cost) +
+      Number(indeptScreeningPrices.regPrice) +
+      Number(leasePrices.regPrice)
+    ).toFixed(2);
+
+    // For members
+    const totalCostMembers = (
+      Number(total) +
+      Number(indeptScreeningPrices.redPrice) +
+      Number(leasePrices.redPrice)
+    ).toFixed(2);
+
     // Calculate the total discount for the sidebar
-    const calculatedTotalSavings =
-      (Number(discount) +
+    const calculatedTotalSavings = (
+      Number(discount) +
       Number(indeptScreeningPrices.savings) +
-      Number(leasePrices.savings)).toFixed(2);
+      Number(leasePrices.savings)
+    ).toFixed(2);
+
+    // Input the cost of 1, 2, and 3 for non-members
+    costNonMembers.innerHTML = `${totalCostNonMembers} $`;
+
+    // Input the cost of 1, 2, and 3 for members
+    costMembers.innerHTML = `${totalCostMembers} $`;
 
     // Input the needs on the first board
     needs.innerHTML = `Enquêtes: ${totalNeeds}<br>Baux: ${totalNeeds}`;
@@ -100,6 +129,8 @@ const calculateNeeds = (doorsNum, rate) => {
     leasesDis.innerHTML = `0.00 $`;
     screeningsDisSidebar.innerHTML = `0.00 $`;
     leasesDisSidebar.innerHTML = `0.00 $`;
+    costNonMembers.innerHTML = `0.00 $`;
+    totalCostMembers.innerHTML = `0.00 $`;
   }
 };
 
