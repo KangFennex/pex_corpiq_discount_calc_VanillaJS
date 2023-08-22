@@ -1,3 +1,6 @@
+const menuIcon = document.querySelector("#menu-icon");
+const menuIconClose = document.querySelector("#menu-icon-close");
+const menu = document.querySelector("#menu");
 const textarea = document.querySelectorAll(".textarea");
 const costMembership = document.querySelector(".prix-forfait");
 const membershipDiscount = document.querySelector(".prix-forfait-rabais");
@@ -18,7 +21,6 @@ const leasesRed = document.querySelector(".leasesRedPrice");
 const leasesDis = document.querySelector(".leasesDiscount");
 const leasesDisSidebar = document.querySelector(".leasesDiscountSidebar");
 const totalSavings = document.querySelector(".totalSavings");
-
 const costMembers = document.querySelector(".prix-membre");
 const costNonMembers = document.querySelector(".prix-nonMembre");
 
@@ -28,6 +30,19 @@ let cost;
 let total;
 
 // textarea.focus();
+
+// Function to toggle the menu
+
+menuIcon.addEventListener("click", () => {
+  menuIcon.style.display = "none";
+  menuIconClose.style.display = "flex";
+  menu.style.display = "flex";
+});
+menuIconClose.addEventListener("click", () => {
+  menuIconClose.style.display = "none";
+  menuIcon.style.display = "flex";
+  menu.style.display = "none";
+});
 
 // Function to calculate the prices of screening and leases according to the data found in calculateNeeds()
 const calculatePrices = (quantity, priceMember, priceNonMember) => {

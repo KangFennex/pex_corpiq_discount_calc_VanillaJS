@@ -5,18 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/c1af0c170c.js"
+      crossorigin="anonymous"
+    ></script>
     <title>PEX CORPIQ Savings Calculator</title>
   </head>
   <body>
+    <div class="navbar">
+      <div class="logos">
+        <a href="https://www.corpiq.com" target="_blank"
+          ><img src="./assets/corpiq logo.png" alt="ProprioEnquete Logo"
+        /></a>
+        <a href="https://proprioexpert.ca" target="_blank"
+          ><img src="./assets/PEX logo.png" alt="ProprioExpert Logo"
+        /></a>
+      </div>
+      <div class="menu-icons">
+        <i class="fa-solid fa-bars menu-icon" id="menu-icon"></i>
+        <i class="fa-solid fa-xmark menu-icon" id="menu-icon-close"></i>
+      </div>
+      <div class="menu" id="menu">
+        <ul>
+          <li>
+            <a
+              href="https://client.magextechnologies.com target="
+              target="_blank"
+              >Client</a
+            >
+            <div class="bar"></div>
+          </li>
+          <li>
+            <a href="https://octo.corpiq.com" target="_blank">Octo</a>
+            <div class="bar"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="container">
       <div class="calculator-and-discounts-display-container">
         <div class="calculator-container">
           <div class="board calculator-input">
             <div class="box lead logo span-three">
-              Vos économies en tant que membre
-              <span class="corpiq-logo"
-                ><img src=".\assets\corpiq logo.png" alt="Logo CORPIQ"
-              /></span>
+              Économies en tant que membre CORPIQ
             </div>
             <div class="box category">Forfait PEX</div>
             <div class="box category">%</div>
@@ -25,12 +56,12 @@
               <input
                 class="text-area prix-forfait"
                 type="number"
-                placeholder="Prix ($)"
+                placeholder="$ Prix "
               />
             </div>
             <div class="box percentage-discount">10 %</div>
             <div class="box">
-              <span class="prix-forfait-rabais"
+              <span class="prix-forfait-rabais results"
                 >Rabais: 0.00&nbsp;$<br />Total: 0.00&nbsp;$<br />Avec taxes:
                 0.00&nbsp;$</span
               >
@@ -38,21 +69,21 @@
             <div class="box category">Nombre de portes</div>
             <div class="box category">Taux de roulement (%)</div>
             <div class="box category">Besoins</div>
-            <div class="box">
+            <div class="box border-left">
               <input
                 class="text-area number-doors"
                 type="number"
-                placeholder="Portes (#)"
+                placeholder="# Portes"
               />
             </div>
             <div class="box">
               <input
                 class="text-area percentage-rental"
                 type="number"
-                placeholder="Taux (%)"
+                placeholder="% Taux"
               />
             </div>
-            <div class="box besoins-enquetes-baux">
+            <div class="box besoins-enquetes-baux results border-right">
               Enquêtes: 0 <br />
               Baux: 0
             </div>
@@ -61,47 +92,57 @@
         <div class="discounts-display-container">
           <div class="board discounts-display">
             <div class="box lead span-four">
-              Vos économies en enquêtes et en baux
+              Économies en enquêtes et en baux
             </div>
             <div class="box"></div>
             <div class="box category">Prix régulier</div>
             <div class="box category">Prix réduit</div>
             <div class="box category">Rabais</div>
             <div class="box category">Enquêtes</div>
-            <div class="box screeningsRegPrice">
+            <div class="box screeningsRegPrice results">
               Basique: 0.00 $<br />Approfondie: 0.00 $
             </div>
-            <div class="box screeningsRedPrice">
+            <div class="box screeningsRedPrice results">
               Basique: 0.00 $<br />Approfondie: 0.00 $
             </div>
-            <div class="box screeningsDiscount">
+            <div class="box screeningsDiscount results">
               Basique: 0.00 $<br />Approfondie: 0.00 $
             </div>
-            <div class="box category">Baux</div>
+            <div class="box category border-left">Baux</div>
             <div class="box leasesRegPrice">0.00 $</div>
             <div class="box leasesRedPrice">0.00 $</div>
-            <div class="box leasesDiscount">0.00 $</div>
+            <div class="box leasesDiscount border-right">0.00 $</div>
           </div>
         </div>
       </div>
       <div class="all-discounts-display-container">
         <div class="board prices-members-vs-nonMembers">
-          <div class="box category sidebarCategory">Prix non-membre</div>
-          <div class="box prix-nonMembre">0.00 $</div>
-          <div class="box category sidebarCategory">Prix membre</div>
-          <div class="box prix-membre">0.00 $</div>
+          <div class="box lead category sidebarCategory">Prix non-membre</div>
+          <div class="box prix-nonMembre border-left border-right">0.00 $</div>
+          <div class="box lead category sidebarCategory">Prix membre</div>
+          <div class="box prix-membre border-left border-right">0.00 $</div>
         </div>
         <div class="board all-discounts-display">
-          <div class="box category sidebarCategory">Rabais adhésion</div>
-          <div class="box prix-forfait-rabais-sidebar">0.00 $</div>
-          <div class="box category sidebarCategory">Rabais enquêtes</div>
-          <div class="box screeningsDiscount-sidebar">0.00 $</div>
-          <div class="box category sidebarCategory">Rabais baux</div>
-          <div class="box leasesDiscountSidebar">0.00 $</div>
+          <div class="box lead category sidebarCategory">Rabais adhésion</div>
+          <div class="box prix-forfait-rabais-sidebar border-left border-right">
+            0.00 $
+          </div>
+          <div class="box lead category sidebarCategory">Rabais enquêtes</div>
+          <div class="box screeningsDiscount-sidebar border-left border-right">
+            0.00 $
+          </div>
+          <div class="box lead category sidebarCategory">Rabais baux</div>
+          <div class="box leasesDiscountSidebar border-left border-right">
+            0.00 $
+          </div>
         </div>
         <div class="board total-discounts-display">
-          <div class="box category sidebarCategory">Économies totales</div>
-          <div class="box totalSavings">0.00 $</div>
+          <div class="box lead category sidebarCategory lastCategory">
+            Économies totales
+          </div>
+          <div class="box totalSavings border-left border-right lastCategory">
+            0.00 $
+          </div>
         </div>
       </div>
     </div>
